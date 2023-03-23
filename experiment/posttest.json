@@ -2,37 +2,38 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Choose the relevant options that are examples of eavesdropping: (more than one option)",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Gathering passwords of your system",
+        "b": "Collecting account numbers",
+        "c": "Deleting the data in the system",
+        "d": "Modifying systems data"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
+      
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "How the attacker gathers information from the system in eavesdropping? ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "By capturing the related network traffic for later analysis.",
+        "b": "By discovering information for blackmail.",
+        "c": "By altering the transmitted data packets",
+        "d": "By flooding the network with fake data"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a type of eavesdropping attack that involves capturing data from wireless networks?",
+      "answers": {
+        "a": "Packet Sniffing",
+        "b": "Brute Force",
+        "c": "Phishing",
+        "d": "DDoS"
       },
-      "correctAnswer": "c",
+       
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]

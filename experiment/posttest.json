@@ -2,12 +2,11 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Choose the relevant options that are examples of eavesdropping: (more than one option)",
+      "question": "Choose the relevant options that are examples of eavesdropping: ",
       "answers": {
         "a": "Gathering passwords of your system",
-        "b": "Collecting account numbers",
-        "c": "Deleting the data in the system",
-        "d": "Modifying systems data"
+        "b": "Deleting the data in the system",
+        "c": "Modifying systems data"
       },
       
       "correctAnswer": "a",

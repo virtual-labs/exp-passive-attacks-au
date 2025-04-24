@@ -8,10 +8,6 @@ Some common types of passive attacks include:
 
 2. Traffic analysis: In traffic analysis, an attacker analyzes patterns of network traffic to deduce information about the communication, such as the identity of the parties involved, the content of the communication, or the timing and frequency of the communication.
 
-3. Port scanning: In port scanning, an attacker scans a network for open ports in order to identify potential vulnerabilities or targets for future attacks.
-
-4. Password attacks: These attacks involve attempting to guess or crack passwords in order to gain access to a system or network. While password attacks may involve active attempts to access data, they can also be passive if an attacker simply observes a user entering their password.
-
 Passive attacks are typically more difficult to detect than active attacks, as they do not involve any modification or disruption of data. To protect against passive attacks, it is important to implement strong encryption and authentication measures to ensure that data transmissions are secure and can only be accessed by authorized parties. Additionally, network monitoring tools and intrusion detection systems can help detect and prevent passive attacks by monitoring network traffic for suspicious activity.
 
 Eavesdropping is a type of passive attack where an attacker intercepts and listens in on a conversation or data transmission between two parties. The attacker may use various techniques to capture the data being transmitted, such as packet sniffing or wiretapping. The goal of eavesdropping is usually to gather sensitive information or data that can be used for future exploitation.

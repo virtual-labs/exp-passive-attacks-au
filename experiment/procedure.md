@@ -6,9 +6,9 @@
 
 3. Click "Next" again to create an encrypted channel to exchange further packets. The encrypted username, and the key for the second encrypted channel are sent here.
 
-4. Click “Next” to to create the second encrypted channel, which will be using the key sent in the previous channel for encryption. The encrypted packet is sent here. 
+4. Click “Next” to create the second encrypted channel, which will be using the key sent in the previous channel for encryption. The encrypted packet is sent here. 
 
-5. Now, identify the encryption method used from the message in the unencrypted channel and then use the de-encrypt tool provided under the 'ENCRYPTION METHODS' toggle to decrypt.
+5. Now, identify the encryption method used from the message in the unencrypted channel and then use the decrypt tool provided under the 'ENCRYPTION METHODS' toggle to decrypt.
 
 12. Copy the username and password once it has been decrypted and enter it in the corresponding text fields provided on screen.
 

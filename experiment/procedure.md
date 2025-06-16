@@ -1,16 +1,18 @@
 ### Procedure
 
-1. To begin, click on "Start". When there is communication between the client and server, the packet is being intercepted and displayed on the terminal. This is possible as the channel being used is unencrypted.
+1.  Click "Start" to begin the experiment. You will see an intercepted packet displayed on the terminal, demonstrating communication over an unencrypted channel.
 
-2. A key request is sent from the client to the server, to which the server responds with a response containing the key for further encrypted communication
+2.  The client sends a key request to the server. In response, the server sends back a key for encrypted communication.
 
-3. Click "Next" again to create an encrypted channel to exchange further packets. The encrypted username, and the key for the second encrypted channel are sent here.
+3.  Click "Next" to create an encrypted channel. The client then sends the encrypted username and a new key for a second encrypted channel.
 
-4. Click “Next” to create the second encrypted channel, which will be using the key sent in the previous channel for encryption. The encrypted packet is sent here. 
+4.  Click "Next" again to create the second encrypted channel, which uses the key from the previous step. The client then sends the final encrypted packet.
 
-5. Now, identify the encryption method used from the message in the unencrypted channel and then use the decrypt tool provided under the 'ENCRYPTION METHODS' toggle to decrypt.
+5.  Now, identify the encryption method from the message in the unencrypted channel.
 
-12. Copy the username and password once it has been decrypted and enter it in the corresponding text fields provided on screen.
+6.  Use the "Decrypt" tool under the "ENCRYPTION METHODS" toggle to decrypt the intercepted messages.
 
-13. Click on “Verify”, the experiment is successful if both the username and password that the hacker intercepted and decrypted are correct.
+7.  Copy the decrypted username and password and enter them into the corresponding text fields.
+
+8.  Click "Verify." The experiment is successful if the decrypted username and password are correct.
 

@@ -1,59 +1,20 @@
 ### Theory
 
-Passive attacks are a type of security attack that involve the interception and/or monitoring of data transmissions without modifying the data itself. The goal of a passive attack is usually to eavesdrop on sensitive information or to gather data for future exploitation.
+Passive attacks are security attacks that involve intercepting or monitoring data transmissions without modifying them. The goal is to eavesdrop on sensitive information or gather data for future exploitation.
 
 #### Types of Passive Attacks
 
-1. Eavesdropping: This involves an attacker listening in on a conversation or data transmission between two parties. The attacker may use various techniques to intercept and capture data, such as packet sniffing.
+1.  **Eavesdropping**: This is the act of secretly listening to a private conversation or data transmission between two parties. An attacker can use techniques like packet sniffing to intercept and capture data. The goal is to gather sensitive information, such as login credentials or personal data, that can be used for malicious purposes. Since eavesdropping does not alter the data, it can continue undetected while compromising privacy.
 
-2. Traffic analysis: In traffic analysis, an attacker analyzes patterns of network traffic to deduce information about the communication, such as the identity of the parties involved, the content of the communication, or the timing and frequency of the communication.
+2.  **Traffic Analysis**: In traffic analysis, an attacker monitors patterns in network traffic to deduce information. This can reveal who is communicating, how often, and at what times, even if the content of the communication is encrypted.
 
-Passive attacks are typically more difficult to detect than active attacks, as they do not involve any modification or disruption of data. To protect against passive attacks, it is important to implement strong encryption and authentication measures to ensure that data transmissions are secure and can only be accessed by authorized parties. Additionally, network monitoring tools and intrusion detection systems can help detect and prevent passive attacks by monitoring network traffic for suspicious activity.
-
-#### Eavesdropping Attack Process
-
-Eavesdropping is a type of passive attack where an attacker intercepts and listens in on a conversation or data transmission between two parties. The attacker may use various techniques to capture the data being transmitted, such as packet sniffing or wiretapping. The goal of eavesdropping is usually to gather sensitive information or data that can be used for future exploitation.
-
-```
-Step 1: Data Transmission Begins
-+------------+                             +------------+
-|   Sender   | ------------------------->  | Receiver   |
-|  (Alice)   |        Data Packets         |   (Bob)    |
-+------------+                             +------------+
-```
-
-```
-Step 2: Attacker Listens Silently
-                      |
-                      | (Monitors communication)
-                      v
-               +-----------------+
-               |   Eavesdropper  |
-               |     (Eve)       |
-               +-----------------+
-               | Uses tools like |
-               | Wireshark or    |
-               | packet sniffers |
-               +-----------------+
-```
-
-```
-Step 3: Sensitive Data Intercepted (Read-only)
-- Eve captures packets without altering them
-- Reads or stores:
-   → Emails
-   → Credentials
-   → Personal data
-```
-
-```
-Outcome:
-✔️ Communication continues uninterrupted
-⚠️ Privacy is compromised
-```
+Passive attacks are difficult to detect because they don't disrupt data exchange. Strong encryption and authentication are the primary defenses, ensuring that even intercepted data remains confidential. Network monitoring tools can also help detect suspicious activity.
 
 #### Example of Eavesdropping
 
-Alice is sending a confidential email to Bob from her computer. An attacker, Eve, who is on the same network as Alice and Bob, uses a packet sniffer tool to intercept and capture the data packets that are being transmitted between Alice's and Bob's computers. With the help of the packet sniffer, Eve is able to read the contents of Alice's email, including any sensitive information or personal details.
+An eavesdropping attack typically follows these steps:
+1.  **Data Transmission**: A sender (e.g., Alice) sends data packets to a receiver (e.g., Bob) over a network.
+2.  **Silent Interception**: An attacker (e.g., Eve) on the same network uses a tool like a packet sniffer to silently monitor and capture these packets without altering them.
+3.  **Information Exposure**: Because the communication is unencrypted, Eve can read the contents of the captured packets, exposing sensitive information.
 
-In this scenario, Eve is eavesdropping on Alice's and Bob's conversation by intercepting their email communication. Because the communication was not encrypted, Eve was able to easily capture the data packets and read the contents of Alice's email. This type of attack can be prevented by using encryption to protect the confidentiality of data transmissions. For example, if Alice had used a secure email service that encrypts email transmissions, Eve would not have been able to intercept and read the email content even if she was able to capture the data packets.
+For instance, if Alice sends an unencrypted email to Bob, Eve can intercept it and read its contents. Had the email been encrypted, Eve would only see scrambled data, rendering the interception useless. This highlights the importance of encryption in protecting data confidentiality.

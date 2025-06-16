@@ -6,6 +6,7 @@ Hall, 2018.
 ### Reference(s)
 
 Forouzan B A, Cryptography and Network Security, Special Indian Edition, Tata McGraw Hill, 2007.
+Kurose, J., & Ross, K., Computer Networking: A Top-Down Approach, 8th Edition, Pearson, 2021.
 
 ### Online Resources
 

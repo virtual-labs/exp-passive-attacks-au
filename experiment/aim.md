@@ -1,3 +1,3 @@
 ### Aim of the experiment
 
-To understand passive network security attacks using examples such as eavesdropping in the network
+To understand how passive attacks like eavesdropping occur in a network.

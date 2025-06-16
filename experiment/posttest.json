@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "Choose the relevant options that are examples of eavesdropping: ",
+      "question": "Which of the following is a primary goal of an eavesdropping attack?",
       "answers": {
         "a": "Gathering passwords of your system",
         "b": "Deleting the data in the system",
@@ -13,7 +13,7 @@
       "difficulty": "beginner"
     },
     {
-      "question": "How the attacker gathers information from the system in eavesdropping? ",
+      "question": "How does an attacker gather information from the system in eavesdropping?",
       "answers": {
         "a": "By capturing the related network traffic for later analysis.",
         "b": "By discovering information for blackmail.",

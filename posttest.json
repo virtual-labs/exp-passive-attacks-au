@@ -1,0 +1,39 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following is a primary goal of an eavesdropping attack?",
+      "answers": {
+        "a": "Gathering passwords of your system",
+        "b": "Deleting the data in the system",
+        "c": "Modifying systems data"
+      },
+      
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "How does an attacker gather information from the system in eavesdropping?",
+      "answers": {
+        "a": "By capturing the related network traffic for later analysis.",
+        "b": "By discovering information for blackmail.",
+        "c": "By altering the transmitted data packets",
+        "d": "By flooding the network with fake data"
+      },
+     "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a type of eavesdropping attack that involves capturing data from wireless networks?",
+      "answers": {
+        "a": "Packet Sniffing",
+        "b": "Brute Force",
+        "c": "Phishing",
+        "d": "DDoS"
+      },
+       
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}

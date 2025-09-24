@@ -1,4 +1,4 @@
-### Theory
+
 
 Passive attacks are security attacks that involve intercepting or monitoring data transmissions without modifying them. The goal is to eavesdrop on sensitive information or gather data for future exploitation.
 

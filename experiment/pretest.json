@@ -2,37 +2,37 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Does the attacker need to continuously monitor the system to gather the data for eavesdropping? ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "True",
+        "b": "False"
+        
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "Which of the following is an example of an eavesdropping attack?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Denial of Service (DoS)",
+        "b": "SQL Injection",
+        "c": "Man-in-the-Middle (MitM)",
+        "d": "Cross-Site Scripting (XSS) "
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Traffic analysis is an example of",
+      "answers": {
+        "a": "both active and passive attack",
+        "b": "neither active nor passive attacks",
+        "c": "active attacks",
+        "d": "passive attacks"
       },
-      "correctAnswer": "c",
+       
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   ]

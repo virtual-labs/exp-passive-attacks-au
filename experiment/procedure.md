@@ -1,4 +1,4 @@
-### Procedure
+
 
 1.  Click "Start" to begin the experiment. You will see an intercepted packet displayed on the terminal, demonstrating communication over an unencrypted channel.
 

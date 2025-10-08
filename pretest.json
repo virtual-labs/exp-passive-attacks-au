@@ -1,0 +1,39 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Does the attacker need to continuously monitor the system to gather the data for eavesdropping? ",
+      "answers": {
+        "a": "True",
+        "b": "False"
+        
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is an example of an eavesdropping attack?",
+      "answers": {
+        "a": "Denial of Service (DoS)",
+        "b": "SQL Injection",
+        "c": "Man-in-the-Middle (MitM)",
+        "d": "Cross-Site Scripting (XSS) "
+      },
+     "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Traffic analysis is an example of",
+      "answers": {
+        "a": "both active and passive attack",
+        "b": "neither active nor passive attacks",
+        "c": "active attacks",
+        "d": "passive attacks"
+      },
+       
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    }
+  ]
+}

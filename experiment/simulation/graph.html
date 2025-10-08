@@ -49,7 +49,7 @@
 
         .control-panel {
             padding: 20px;
-            flex: 2;
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -58,8 +58,6 @@
             height: 800px;
             margin: auto;
             overflow-y: scroll;
-            min-width: 340px;
-            max-width: 520px;
         }
 
         input[type=number] {
@@ -135,9 +133,6 @@
             justify-content: flex-start;
             align-items: start;
             padding: 20px;
-            min-width: 320px;
-            max-width: 400px;
-            width: 26vw;
         }
 
         h3 {
@@ -172,44 +167,37 @@
 <body>
 <div class="flex-box">
     <div class="control-panel">
-        <h2 style="font-size: 1.29em; color: #222; font-weight: 700; margin-bottom: 8px;">Network Graph: TCP SYN/HTTPS/HTTP Simulation</h2>
-        <br>
-        <div style="font-weight: 600; color: #080808; font-size: 1.10em; margin-bottom: 4px;">Aim:</div>
-        <div style="color: #1b1b1b; font-size: 1em; margin-bottom: 10px;">Simulate a TCP SYN Flood Attack and visualize the difference between HTTP and HTTPS traffic in a client-server network with a Man-in-the-Middle (MITM) attacker.</div>
-        <div style="background: #eafaf1; border-left: 4px solid #3cb371; border-radius: 6px; padding: 14px 16px 14px 16px; margin-bottom: 18px;">
-            <div style="font-weight: 600; color: #0a110c; font-size: 1.08em; margin-bottom: 4px;">Expected Outcome:</div>
-            <ul style="color: #1b4d2b; font-size: 1em; margin: 0 0 0 18px; padding: 0 0 0 18px; list-style: disc;">
-                <li>HTTP packets can be intercepted and read by the attacker (MITM).</li>
-                <li>HTTPS packets are encrypted and cannot be read by the attacker.</li>
-                <li>The log page displays step-by-step events and packet contents.</li>
-            </ul>
-        </div>
-        <div style="margin-bottom: 10px; color: #1c4718; font-size: 1em; font-weight: 400;">
-            Choose the number of clients and servers required and click on "Generate Graph" to generate the graph.<br>
-            Click on a client and a server to establish an attack from the client to the server.
-        </div>
-        <label style="margin-top: 8px;">Number of Servers</label>
-        <input type="number" id="countServer" name="count" min="1" max="50" value="1">
-        <label style="margin-top: 8px;">Number of Clients</label>
-        <input type="number" id="countClient" name="count" min="1" max="50" value="1">
+        <h2>
+            Network Graph simulating a client/server connection TCP SYN Attacks
+        </h2>
+        <div>
+            <h4>
+                Choose the number of clients and servers required and click on "Generate Graph" to generate the graph.
+                Click on a client and a server to establish an attack from the client to the server.
+            </h4>
+            <label>Number of Servers</label>
+            <input type="number" id="countServer" name="count" min="1" max="50" value="1">
+            <label>Number of Clients</label>
+            <input type="number" id="countClient" name="count" min="1" max="50" value="1">
 
-        <button onclick="init()" id="button">Generate Graph</button>
+            <button onclick="init()" id="button">Generate Graph</button>
 
-        <div class="flex" style="margin-top: 30px">
-            <span>HTTP packet : </span> <span class="circle blue"></span>
-        </div>
-        <div class="flex" style="margin-top: 10px">
-            <span>HTTPS packet : </span> <span class="circle orange"></span>
-        </div>
-        <br>
-        <span class="attack-info">Attacking client: </span>
-        <span id="client-id"></span>
-        <span class="attack-info">Target server: </span>
-        <span id="server-id"></span>
+            <span class="attack-info">Attacking client: </span>
+            <span id="client-id"></span>
+            <br>
+            <span class="attack-info">Target server: </span>
+            <span id="server-id"></span>
 
+            <div class="flex" style="margin-top: 30px">
+                <span>HTTP packet: </span> <span class="circle blue"></span>
+            </div>
+            <div class="flex" style="margin-top: 10px">
+                <span>HTTPS packet: </span> <span class="circle orange"></span>
+            </div>
+        </div>
     </div>
     <div id="chart"></div>
-    <div id="logs" style="min-width: 420px; max-width: 520px; width: 32vw;">
+    <div id="logs">
         <h3>
             Logs
         </h3>
@@ -231,8 +219,6 @@
 
     let isSimulationInitialized = false
 
-    let simulation = null; // Track simulation globally
-
     function addClientWrapper(count) {
         for (let i = 0; i < count; i++) {
             addClient()
@@ -249,39 +235,31 @@
 
     function addServer() {
         nodes.push({
-            id: "server" + (serverCountCreated + 1),
+            id: "server" + serverCountCreated,
             type: "server",
             icon: "server.svg",
             isClicked: false,
         })
-        links.push({source: "server" + (serverCountCreated + 1), target: "hacker", color: "#8a8ac2"})
+        links.push({source: "server" + serverCountCreated, target: "hacker", color: "#8a8ac2"})
         serverCountCreated++
     }
 
     function addClient() {
         nodes.push({
-            id: "client" + (clientCountCreated + 1),
+            id: "client" + clientCountCreated,
             type: "client",
             icon: "workstation.svg",
             isClicked: false,
         })
-        links.push({source: "client" + (clientCountCreated + 1), target: "hacker", color: "#8a8ac2"})
+        links.push({source: "client" + clientCountCreated, target: "hacker", color: "#8a8ac2"})
         clientCountCreated++
     }
 
     function init() {
-        // Always allow re-generation: clear chart, logs, nodes, links, and reset state
-        d3.select("#chart").selectAll("svg").remove(); // Remove SVG only
-        document.getElementById("log-list").innerHTML = "";
-        nodes = [];
-        links = [];
-        serverCountCreated = 0;
-        clientCountCreated = 0;
-        isSimulationInitialized = false;
-        document.getElementById("client-id").innerHTML = "";
-        document.getElementById("server-id").innerHTML = "";
-        document.getElementById("button").disabled = false;
-        if (simulation) { simulation.stop(); simulation = null; } // Stop previous simulation
+
+        if (isSimulationInitialized) {
+            return
+        }
 
         let serverCount = document.getElementById("countServer").value
         serverCount = parseInt(serverCount)
@@ -329,19 +307,13 @@
         logList.innerHTML += "<li>Graph has been generated</li>"
         logList.scrollTo(0, logList.scrollHeight * 100)
 
-        // document.getElementById("button").disabled = true; // REMOVE or COMMENT OUT this line
+        document.getElementById("button").disabled = true;
 
         //match width and height to the size of the container
-        let chartDiv = document.getElementById("chart");
-        // Responsive SVG sizing
-        let chartRect = chartDiv.getBoundingClientRect();
-        let width = chartRect.width > 0 ? chartRect.width : 1000;
-        let height = chartRect.height > 0 ? chartRect.height : 800;
+        let width = 1000
+        let height = 800
 
-        // Always place hacker in the center
-        let centerX = width / 2;
-        let centerY = height / 2;
-        nodes.push({id: "hacker", type: "hacker", icon: "laptop.svg", fx: centerX, fy: centerY});
+        nodes.push({id: "hacker", type: "hacker", icon: "laptop.svg"})
 
         let svg = d3.select("#chart")
             .append("svg")
@@ -355,35 +327,20 @@
             })
             .distance(linkDistance); // set the link distance value
 
-        simulation = d3.forceSimulation(nodes)
+        let simulation = d3.forceSimulation(nodes)
             .force("link", linkForce)
             .force("charge", d3.forceManyBody().strength(-1000))
-            .force("center", d3.forceCenter(centerX, centerY))
+            .force("center", d3.forceCenter(500, 400))
             .force("y", d3.forceY().y(function (d) {
                 if (d.type === "server") {
-                    return centerY - height * 0.35;
+                    return height / 7;
                 } else if (d.type === "client") {
-                    return centerY + height * 0.35;
+                    return height * 0.75;
                 } else {
-                    return centerY;
+                    return height / 2;
                 }
             }))
-            .on("tick", ticked);
 
-        function ticked() {
-            link
-                .attr("x1", function (d) { return d.source.x; })
-                .attr("y1", function (d) { return d.source.y; })
-                .attr("x2", function (d) { return d.target.x; })
-                .attr("y2", function (d) { return d.target.y; });
-
-            node
-                .attr("transform", function (d) { return "translate(" + d.x + "," + d.y + ")"; });
-
-            text
-                .attr("x", function (d) { return d.x; })
-                .attr("y", function (d) { return d.y; });
-        }
 
         let link = svg.append("g")
             .attr("class", "links")
@@ -430,35 +387,35 @@
             .attr("dx", 15)
             .attr("dy", 4);
 
-        // simulation.on("tick", function () {
-        //     link
-        //         .attr("x1", function (d) {
-        //             return d.source.x;
-        //         })
-        //         .attr("y1", function (d) {
-        //             return d.source.y;
-        //         })
-        //         .attr("x2", function (d) {
-        //             return d.target.x;
-        //         })
-        //         .attr("y2", function (d) {
-        //             return d.target.y;
-        //         });
-        //
-        //     node
-        //         .attr("transform", function (d) {
-        //             return "translate(" + d.x + "," + d.y + ")";
-        //         });
-        //
-        //     text
-        //         .attr("x", function (d) {
-        //             return d.x;
-        //         })
-        //         .attr("y", function (d) {
-        //             return d.y;
-        //         });
-        //
-        // });
+        simulation.on("tick", function () {
+            link
+                .attr("x1", function (d) {
+                    return d.source.x;
+                })
+                .attr("y1", function (d) {
+                    return d.source.y;
+                })
+                .attr("x2", function (d) {
+                    return d.target.x;
+                })
+                .attr("y2", function (d) {
+                    return d.target.y;
+                });
+
+            node
+                .attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+            text
+                .attr("x", function (d) {
+                    return d.x;
+                })
+                .attr("y", function (d) {
+                    return d.y;
+                });
+
+        });
 
         node.on("click", function (d) {
             let data = d.srcElement.__data__
@@ -606,7 +563,7 @@
                 }))
                 .enter()
                 .append("circle")
-                .attr("r", 16)
+                .attr("r", 5)
                 .style("fill", function (d) {
                     if (protocol === "HTTP") {
                         return "#2196F3";
@@ -643,7 +600,7 @@
 
             packet
                 .transition()
-                .duration(1800)
+                .duration(800)
                 .attr("cx", function (d) {
                     if (isSourceToTarget) {
                         if (d.target.type === targetType) {
@@ -674,7 +631,7 @@
                         return d.source.id === id;
                     })
                     .remove();
-            }, 1800)
+            }, 800)
 
             return destination
         }
